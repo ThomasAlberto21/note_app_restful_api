@@ -8,5 +8,8 @@
   },
   "author": "Thomas Alberto",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "joi": "^17.10.1"
+  }
 }
