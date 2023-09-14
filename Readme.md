@@ -20,7 +20,7 @@ npm install --save-dev @types/express
 - Description : Express, is a popular web application framework for developing Node.js-based web applications.
 - Documentation : https://www.npmjs.com/package/express
 
-# Add Package Prisma
+# Add Library Prisma
 
 ```sh
 npm install --save-dev prisma
@@ -74,3 +74,11 @@ npm install --save-dev @types/jest
 ```
 - Description : Jest is a JavaScript library used to test Node.js applications.
 - Documentation : https://www.npmjs.com/package/jest
+
+
+# Add Library Babel
+```sh
+npm install --save-dev babel-jest @babel/preset-env
+```
+- Description : Babel is a JavaScript library used to transpile ES6+ code to ES5.
+- Documentation : https://babeljs.io/setup#installation

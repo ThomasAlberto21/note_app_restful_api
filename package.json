@@ -4,7 +4,12 @@
   "description": "Note App RESTful API",
   "main": "src/main.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest -i"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "author": "Thomas Alberto",
   "license": "ISC",
@@ -17,10 +22,12 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.15",
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.4",
     "@types/uuid": "^9.0.3",
+    "babel-jest": "^29.7.0",
     "prisma": "^5.3.0"
   }
 }
