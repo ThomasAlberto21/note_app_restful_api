@@ -1,0 +1,12 @@
+{
+  "name": "note_app_restful_api",
+  "version": "1.0.0",
+  "description": "Note App RESTful API",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Thomas Alberto",
+  "license": "ISC",
+  "type": "module"
+}
