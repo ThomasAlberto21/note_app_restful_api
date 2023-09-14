@@ -51,3 +51,13 @@ npm install --save-dev @types/bcrypt
 ```
 - Description : Bcrypt is a JavaScript library used to hash passwords in Node.js applications.
 - Documentation : https://www.npmjs.com/package/bcrypt
+
+# Add Package UUID
+```sh
+npm install uuid
+```
+```sh
+npm install --save-dev @types/uuid
+```
+- Description : UUID is a JavaScript library used to generate unique identifiers in Node.js applications.
+- Documentation : https://www.npmjs.com/package/uuid
