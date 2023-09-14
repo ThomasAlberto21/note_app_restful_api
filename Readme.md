@@ -4,7 +4,7 @@
 npm install joi
 ```
 
-- Description : Joi is a library used to validate JavaScript objects.
+- Description : Joi is a JavaScript library used to validate data in Node.js applications
 - Documentation : https://www.npmjs.com/package/joi
 
 # Add Package Express
