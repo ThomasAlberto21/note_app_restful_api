@@ -70,7 +70,7 @@ npm install --save-dev @types/uuid
 # Add Package Jest
 
 ```sh
-npm install --save-dev @types/jest
+npm install --save-dev jest @types/jest
 ```
 - Description : Jest is a JavaScript library used to test Node.js applications.
 - Documentation : https://www.npmjs.com/package/jest
@@ -82,3 +82,10 @@ npm install --save-dev babel-jest @babel/preset-env
 ```
 - Description : Babel is a JavaScript library used to transpile ES6+ code to ES5.
 - Documentation : https://babeljs.io/setup#installation
+
+# Add Package Supertest
+```sh
+npm install --save-dev supertest @types/supertest
+```
+- Description : Supertest is a JavaScript library used to test HTTP requests in Node.js applications.
+- Documentation : https://www.npmjs.com/package/supertest
