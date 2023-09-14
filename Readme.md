@@ -40,3 +40,14 @@ npm install winston
 
 - Description : Winston is a JavaScript library used to manage logging in Node.js applications.
 - Documentation : https://www.npmjs.com/package/winston
+
+
+# Add Package Bcrypt
+```sh
+npm install bcrypt
+```
+```sh
+npm install --save-dev @types/bcrypt
+```
+- Description : Bcrypt is a JavaScript library used to hash passwords in Node.js applications.
+- Documentation : https://www.npmjs.com/package/bcrypt
