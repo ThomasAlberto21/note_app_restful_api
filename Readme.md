@@ -26,10 +26,7 @@ npm install --save-dev @types/express
 npm install --save-dev prisma
 ```
 
-- Description : Prisma is a library used in web and backend application development to simplify and facilitate
-  interaction with databases. Prisma provides a modern ORM (Object-Relational Mapping) that allows developers to
-  interact with databases using programming languages such as JavaScript or TypeScript, rather than having to write SQL
-  statements directly.
+- Description : Prisma is a library used to interact with a database in Node.js applications.
 - Documentation : https://www.prisma.io/
 
 # Add Package Winston
@@ -72,20 +69,24 @@ npm install --save-dev @types/uuid
 ```sh
 npm install --save-dev jest @types/jest
 ```
+
 - Description : Jest is a JavaScript library used to test Node.js applications.
 - Documentation : https://www.npmjs.com/package/jest
 
-
 # Add Library Babel
+
 ```sh
 npm install --save-dev babel-jest @babel/preset-env
 ```
+
 - Description : Babel is a JavaScript library used to transpile ES6+ code to ES5.
 - Documentation : https://babeljs.io/setup#installation
 
 # Add Package Supertest
+
 ```sh
 npm install --save-dev supertest @types/supertest
 ```
+
 - Description : Supertest is a JavaScript library used to test HTTP requests in Node.js applications.
 - Documentation : https://www.npmjs.com/package/supertest
