@@ -11,19 +11,22 @@ datasource db {
 }
 
 model User {
-  id       String  @id @db.VarChar(100)
+  id_user  String  @id @db.VarChar(100)
   name     String  @db.VarChar(100)
   password String  @db.VarChar(100)
   token    String? @db.VarChar(100)
+  notes    Note[]
 
   @@map("users")
 }
 
 model Note {
-  id          String @id @db.VarChar(100)
+  id_note     String @id @db.VarChar(100)
   title       String @db.VarChar(100)
   date        String @db.VarChar(100)
   description String @db.VarChar(5000)
+  id_user     String @db.VarChar(100)
+  user        User   @relation(fields: [id_user], references: [id_user])
 
   @@map("notes")
 }
