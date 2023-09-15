@@ -61,7 +61,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "id_user": {
                       "type": "string",
                       "description": "Id user"
                     },
@@ -315,7 +315,7 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "id": {
+                      "id_note": {
                         "type": "string",
                         "description": "Id note"
                       },
@@ -412,7 +412,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "id_note": {
                       "type": "string",
                       "description": "Id note"
                     },
@@ -505,7 +505,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "id_note": {
                       "type": "string",
                       "description": "Id note"
                     },
