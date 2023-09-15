@@ -90,3 +90,10 @@ npm install --save-dev supertest @types/supertest
 
 - Description : Supertest is a JavaScript library used to test HTTP requests in Node.js applications.
 - Documentation : https://www.npmjs.com/package/supertest
+
+# Add Library Prettier
+```sh
+npm install --save-dev --save-exact prettier
+```
+- Description : Prettier is a JavaScript library used to format code in Node.js applications.
+- Documentation : https://prettier.io/
