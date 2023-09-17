@@ -42,7 +42,7 @@ const updateUser = async (req, res, next) => {
 
     const result = await userService.updateUser(request);
     res.status(200).json({
-      success: 'Update success',
+      data: result,
     });
   } catch (e) {
     next(e);
