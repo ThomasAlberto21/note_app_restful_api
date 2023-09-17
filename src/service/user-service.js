@@ -32,22 +32,21 @@ const registerUser = async (request) => {
 };
 
 const loginUser = async (request) => {
-  console.log(request);
   const loginRequest = validate(loginUserValidation, request);
 
   const user = await prismaClient.user.findFirst({
     where: {
-      id_user: loginRequest.id_user,
+      name: loginRequest.name,
     },
     select: {
+      id_user: true,
       name: true,
       password: true,
     },
   });
-  console.log(user);
 
   if (!user) {
-    throw new ResponseError(401, 'Name or password is wrong');
+    throw new ResponseError(401, 'Name or password wrong');
   }
 
   const isPasswordValid = await bcrypt.compare(
@@ -55,7 +54,7 @@ const loginUser = async (request) => {
     user.password,
   );
   if (!isPasswordValid) {
-    throw new ResponseError(401, 'Name or password is wrong');
+    throw new ResponseError(401, 'Name or password wrong');
   }
 
   const token = uuid().toString();
