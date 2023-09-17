@@ -34,8 +34,20 @@ const getUser = async (req, res, next) => {
   }
 };
 
+const logoutUser = async (req, res, next) => {
+  try {
+    await userService.logoutUser(req.user.id_user);
+    res.status(200).json({
+      success: 'Logout success',
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export default {
   registerUser,
   loginUser,
   getUser,
+  logoutUser,
 };
