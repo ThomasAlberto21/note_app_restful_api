@@ -22,6 +22,7 @@ describe('User Test', () => {
       });
 
       expect(result.status).toBe(400);
+      expect(result.body.error).toBeDefined();
     });
 
     it('Should can not register new user with name less than 10 character', async () => {
@@ -31,6 +32,7 @@ describe('User Test', () => {
       });
 
       expect(result.status).toBe(400);
+      expect(result.body.error).toBeDefined();
     });
 
     it('Should can not register new user with name more than 100 characters', async () => {
@@ -40,15 +42,59 @@ describe('User Test', () => {
       });
 
       expect(result.status).toBe(400);
+      expect(result.body.error).toBeDefined();
     });
 
     it('Should reject if request is invalid', async () => {
       const result = await supertest(web).post('/user/register').send({
         name: '',
-        password: ''
+        password: '',
       });
 
       expect(result.status).toBe(400);
+      expect(result.body.error).toBeDefined();
+    });
+  });
+
+  describe('POST /user/login', () => {
+    it('Should can login', async () => {
+      const result = await supertest(web).post('/user/login').send({
+        name: 'Riot',
+        password: 'riot1234567',
+      });
+
+      expect(result.status).toBe(200);
+      expect(result.body.data.token).toBeDefined();
+      expect(result.body.data.password).toBeUndefined();
+    });
+
+    it('Should reject if request is invalid', async () => {
+      const result = await supertest(web).post('/user/login').send({
+        name: '',
+        password: '',
+      });
+
+      expect(result.status).toBe(400);
+    });
+
+    it('Should reject if name wrong', async () => {
+      const result = await supertest(web).post('/user/login').send({
+        name: 'Riot1',
+        password: 'riot1234567',
+      });
+
+      expect(result.status).toBe(401);
+      expect(result.body.error).toBeDefined();
+    });
+
+    it('Should reject if password wrong', async () => {
+      const result = await supertest(web).post('/user/login').send({
+        name: 'Riot',
+        password: 'riot1234568',
+      });
+
+      expect(result.status).toBe(401);
+      expect(result.body.error).toBeDefined();
     });
   });
 });
