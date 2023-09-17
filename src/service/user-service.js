@@ -4,6 +4,7 @@ import { validate } from '../validation/validation.js';
 import { prismaClient } from '../application/database.js';
 import { ResponseError } from '../error/response-error.js';
 import {
+  getUserValidation,
   loginUserValidation,
   registerUserValidation,
 } from '../validation/user-validation.js';
@@ -33,21 +34,22 @@ const registerUser = async (request) => {
 
 const loginUser = async (request) => {
   const loginRequest = validate(loginUserValidation, request);
-  const [user] = await Promise.all([prismaClient.user.findFirst({
-    where: {
-      name: loginRequest.name,
-    },
-    select: {
-      id_user: true,
-      name: true,
-      password: true,
-    },
-  })]);
+  const [user] = await Promise.all([
+    prismaClient.user.findFirst({
+      where: {
+        name: loginRequest.name,
+      },
+      select: {
+        id_user: true,
+        name: true,
+        password: true,
+      },
+    }),
+  ]);
 
   if (!user) {
     throw new ResponseError(401, 'Name or password wrong');
   }
-
 
   const isPasswordValid = await bcrypt.compare(
     loginRequest.password,
@@ -71,7 +73,28 @@ const loginUser = async (request) => {
   });
 };
 
+const getUser = async (name) => {
+  name = validate(getUserValidation, name);
+
+  const user = await prismaClient.user.findFirst({
+    where: {
+      name: name,
+    },
+    select: {
+      id_user: true,
+      name: true,
+    },
+  });
+
+  if (!user) {
+    throw new ResponseError(404, 'User not found');
+  }
+
+  return user;
+};
+
 export default {
   registerUser,
   loginUser,
+  getUser,
 };
