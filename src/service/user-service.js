@@ -7,6 +7,7 @@ import {
   getUserValidation,
   loginUserValidation,
   registerUserValidation,
+  updateUserValidation,
 } from '../validation/user-validation.js';
 
 const registerUser = async (request) => {
@@ -93,7 +94,38 @@ const getUser = async (name) => {
   return user;
 };
 
+const updateUser = async (request) => {
+  const user = validate(updateUserValidation, request);
 
+  const totalInDatabase = await prismaClient.user.count({
+    where: {
+      id_user: user.id_user,
+    },
+  });
+
+  if (!totalInDatabase) {
+    throw new ResponseError(404, 'User not found');
+  }
+
+  const data = {};
+  if (user.name) {
+    data.name = user.name;
+  }
+
+  if (user.password) {
+    data.password = await bcrypt.hash(user.password, 10);
+  }
+
+  return prismaClient.user.update({
+    where: {
+      id_user: user.id_user,
+    },
+    data: data,
+    select: {
+      name: true,
+    },
+  });
+};
 
 const logoutUser = async (id_user) => {
   id_user = validate(getUserValidation, id_user);
@@ -126,4 +158,5 @@ export default {
   loginUser,
   getUser,
   logoutUser,
+  updateUser,
 };
