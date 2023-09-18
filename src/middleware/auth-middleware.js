@@ -6,7 +6,7 @@ export const authMiddleware = async (req, res, next) => {
     res
       .status(401)
       .json({
-        errors: 'Unauthorized',
+        error: 'Unauthorized',
       })
       .end();
   } else {
@@ -19,7 +19,7 @@ export const authMiddleware = async (req, res, next) => {
       res
         .status(401)
         .json({
-          errors: 'Unauthorized',
+          error: 'Unauthorized',
         })
         .end();
     } else {

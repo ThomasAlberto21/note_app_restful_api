@@ -46,7 +46,11 @@ K
 src/error/response-error.js,a/f/af25aaf7eced21f831b00dda80fbd8750127bd79
 Q
 !src/controller/user-controller.js,2/2/22fb8969ed39ca10b5cdf0257f3b810dd0c25b6f
-J
-src/route/public-router.js,9/1/91fa72789cd568a05b9421b1f2d93ebd554a8f29
 B
 tests/user.test.js,1/1/112c53c72c82adb3605e5b866c07584bc1e988be
+K
+src/router/public-router.js,5/e/5efa26a3427775fb5948e31aabe5ede92ba62160
+Q
+!src/middleware/auth-middleware.js,2/c/2c6a942750d08bb722afd5cdfbc1efd5638c55ed
+H
+src/router/api-router.js,3/f/3f3e478ad142a0db9593279518994af6d3e70230

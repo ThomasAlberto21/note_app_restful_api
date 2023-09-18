@@ -46,7 +46,11 @@ L
 src/main.js,4/1/41d348bfb8135a570c1d2675c884f60724201c5c
 K
 src/service/user-service.js,7/6/76e6a96d7ace783983d1eb924cbfc37e3c09a674
-J
-src/route/public-router.js,9/1/91fa72789cd568a05b9421b1f2d93ebd554a8f29
 B
 tests/user.test.js,1/1/112c53c72c82adb3605e5b866c07584bc1e988be
+K
+src/router/public-router.js,5/e/5efa26a3427775fb5948e31aabe5ede92ba62160
+Q
+!src/middleware/auth-middleware.js,2/c/2c6a942750d08bb722afd5cdfbc1efd5638c55ed
+H
+src/router/api-router.js,3/f/3f3e478ad142a0db9593279518994af6d3e70230
