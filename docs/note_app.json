@@ -274,12 +274,12 @@
         }
       }
     },
-    "/note": {
+    "/notes": {
       "get": {
         "tags": [
           "Note"
         ],
-        "summary": "Get Note",
+        "summary": "Get Notes",
         "description": "Get all note and search note by title",
         "parameters": [
           {
@@ -376,7 +376,7 @@
         "tags": [
           "Note"
         ],
-        "summary": "Create Note",
+        "summary": "Create Notes",
         "description": "Create a new note",
         "requestBody": {
           "required": true,
@@ -453,7 +453,7 @@
         }
       }
     },
-    "/note/{noteId}": {
+    "/notes/{noteId}": {
       "put": {
         "tags": [
           "Note"
