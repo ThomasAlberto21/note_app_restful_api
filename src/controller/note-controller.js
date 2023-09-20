@@ -13,6 +13,20 @@ const createNote = async (req, res, next) => {
   }
 };
 
+const getNote = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const noteId = req.params.noteId;
+    const result = await noteService.getNote(user, noteId);
+    res.status(200).json({
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export default {
   createNote,
-}
+  getNote
+};
