@@ -454,6 +454,103 @@
       }
     },
     "/notes/{noteId}": {
+      "get": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "Get Notes",
+        "description": "Get all note and search note by title",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "description": "Search note by title",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "examples": {
+              "Belajar": {
+                "value": "Belajar",
+                "description": "Search note by title belajar"
+              },
+              "Musik": {
+                "value": "Musik",
+                "description": "Search todolist by title musik"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success get all note",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id_note": {
+                        "type": "string",
+                        "description": "Id note"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "Title note"
+                      },
+                      "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date note"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "Description note"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "put": {
         "tags": [
           "Note"

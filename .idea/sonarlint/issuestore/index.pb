@@ -54,3 +54,9 @@ Q
 !src/middleware/auth-middleware.js,2/c/2c6a942750d08bb722afd5cdfbc1efd5638c55ed
 H
 src/router/api-router.js,3/f/3f3e478ad142a0db9593279518994af6d3e70230
+Q
+!src/controller/note-controller.js,f/9/f91534ed5110ac7c4c8c232d1e2da7d328ec492a
+Q
+!src/validation/note-validation.js,e/a/ea0dd816ebf91d599d622254676179e5429826c4
+K
+src/service/note-service.js,0/f/0fbd7e0b17877db4eb1046143d9eb209bd68c079
