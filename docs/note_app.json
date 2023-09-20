@@ -279,8 +279,8 @@
         "tags": [
           "Note"
         ],
-        "summary": "Get Notes",
-        "description": "Get all note and search note by title",
+        "summary": "Search Notes",
+        "description": "Search note by title",
         "parameters": [
           {
             "name": "name",
@@ -459,31 +459,7 @@
           "Note"
         ],
         "summary": "Get Notes",
-        "description": "Get all note and search note by title",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "description": "Search note by title",
-            "schema": {
-              "type": "string",
-              "nullable": true,
-              "minLength": 1,
-              "maxLength": 100
-            },
-            "examples": {
-              "Belajar": {
-                "value": "Belajar",
-                "description": "Search note by title belajar"
-              },
-              "Musik": {
-                "value": "Musik",
-                "description": "Search todolist by title musik"
-              }
-            }
-          }
-        ],
+        "description": "Get Notes",
         "responses": {
           "200": {
             "description": "Success get all note",
