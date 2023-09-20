@@ -279,8 +279,8 @@
         "tags": [
           "Note"
         ],
-        "summary": "Search Notes",
-        "description": "Search note by title",
+        "summary": "Get Notes",
+        "description": "Get Notes",
         "parameters": [
           {
             "name": "name",
@@ -458,11 +458,11 @@
         "tags": [
           "Note"
         ],
-        "summary": "Get Notes",
-        "description": "Get Notes",
+        "summary": "Get Notes By Id",
+        "description": "Get Notes by id",
         "responses": {
           "200": {
-            "description": "Success get all note",
+            "description": "Success get note by id",
             "content": {
               "application/json": {
                 "schema": {
