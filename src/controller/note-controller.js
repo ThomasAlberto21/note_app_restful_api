@@ -26,7 +26,24 @@ const getNote = async (req, res, next) => {
   }
 };
 
+const updateNote = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const noteId = req.params.noteId;
+    const request = req.body;
+    request.id_note = noteId;
+
+    const result = await noteService.updateNote(user, request);
+    res.status(200).json({
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export default {
   createNote,
-  getNote
+  getNote,
+  updateNote,
 };

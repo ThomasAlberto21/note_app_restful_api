@@ -7,4 +7,9 @@ const createNoteValidation = Joi.object({
 
 const getNoteValidation = Joi.string().max(100).required();
 
-export { createNoteValidation, getNoteValidation };
+const updateNoteValidation = Joi.object({
+  id_note: Joi.string().max(100).required(),
+  title: Joi.string().max(100).required(),
+  description: Joi.string().max(100).optional(),
+});
+export { createNoteValidation, getNoteValidation, updateNoteValidation };
