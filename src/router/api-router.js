@@ -16,5 +16,6 @@ userRouter.post('/notes', noteController.createNote);
 userRouter.get('/notes/:noteId', noteController.getNote);
 userRouter.put('/notes/:noteId', noteController.updateNote);
 userRouter.delete('/notes/:noteId', noteController.removeNote);
+userRouter.get('/notes', noteController.searchNote);
 
 export { userRouter };

@@ -56,9 +56,23 @@ const removeNote = async (req, res, next) => {
   }
 };
 
+const searchNote = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const request = req.query;
+    const result = await noteService.searchNote(user, request);
+    res.status(200).json({
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export default {
   createNote,
   getNote,
   updateNote,
-  removeNote
+  removeNote,
+  searchNote,
 };

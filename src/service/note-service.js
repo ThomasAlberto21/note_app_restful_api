@@ -99,9 +99,35 @@ const removeNote = async (user, noteId) => {
   return note;
 };
 
+const searchNote = async (user, request) => {
+  const { title } = request;
+
+  const note = await prismaClient.note.findMany({
+    where: {
+      id_user: user.id_user,
+      title: {
+        contains: title,
+      },
+    },
+    select: {
+      id_note: true,
+      title: true,
+      date: true,
+      description: true,
+    },
+  });
+
+  if (note.length === 0) {
+    throw new ResponseError(404, 'Note is not found');
+  }
+
+  return note;
+};
+
 export default {
   createNote,
   getNote,
   updateNote,
   removeNote,
+  searchNote,
 };
