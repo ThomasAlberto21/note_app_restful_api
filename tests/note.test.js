@@ -1,6 +1,5 @@
 import supertest from 'supertest';
 import { web } from '../src/application/web.js';
-import { dateFormatter } from '../src/utils/date-format.js';
 
 describe('Note Test', () => {
   describe('POST /notes', () => {
