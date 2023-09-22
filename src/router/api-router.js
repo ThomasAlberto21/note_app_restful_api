@@ -15,5 +15,6 @@ userRouter.delete('/api/user/logout', userController.logoutUser);
 userRouter.post('/notes', noteController.createNote);
 userRouter.get('/notes/:noteId', noteController.getNote);
 userRouter.put('/notes/:noteId', noteController.updateNote);
+userRouter.delete('/notes/:noteId', noteController.removeNote);
 
 export { userRouter };

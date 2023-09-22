@@ -42,8 +42,23 @@ const updateNote = async (req, res, next) => {
   }
 };
 
+const removeNote = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const noteId = req.params.noteId;
+
+    await noteService.removeNote(user, noteId);
+    res.status(200).json({
+      data: 'Note successfully deleted',
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export default {
   createNote,
   getNote,
   updateNote,
+  removeNote
 };

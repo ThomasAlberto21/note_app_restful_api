@@ -82,8 +82,26 @@ const updateNote = async (user, request) => {
   });
 };
 
+const removeNote = async (user, noteId) => {
+  noteId = validate(getNoteValidation, noteId);
+
+  const note = await prismaClient.note.count({
+    where: {
+      id_user: user.id_user,
+      id_note: noteId,
+    },
+  });
+
+  if (!note) {
+    throw new ResponseError(404, 'Note is not found');
+  }
+
+  return note;
+};
+
 export default {
   createNote,
   getNote,
   updateNote,
+  removeNote,
 };
