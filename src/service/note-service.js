@@ -96,7 +96,11 @@ const removeNote = async (user, noteId) => {
     throw new ResponseError(404, 'Note is not found');
   }
 
-  return note;
+  return prismaClient.note.delete({
+    where: {
+      id_note: noteId,
+    },
+  });
 };
 
 const searchNote = async (user, request) => {

@@ -16,7 +16,7 @@ const createNote = async (req, res, next) => {
 const getNote = async (req, res, next) => {
   try {
     const user = req.user;
-    const noteId = req.params.noteId;
+    const { noteId } = req.params;
     const result = await noteService.getNote(user, noteId);
     res.status(200).json({
       data: result,
@@ -29,7 +29,7 @@ const getNote = async (req, res, next) => {
 const updateNote = async (req, res, next) => {
   try {
     const user = req.user;
-    const noteId = req.params.noteId;
+    const { noteId } = req.params;
     const request = req.body;
     request.id_note = noteId;
 
@@ -45,7 +45,7 @@ const updateNote = async (req, res, next) => {
 const removeNote = async (req, res, next) => {
   try {
     const user = req.user;
-    const noteId = req.params.noteId;
+    const { noteId } = req.params;
 
     await noteService.removeNote(user, noteId);
     res.status(200).json({
