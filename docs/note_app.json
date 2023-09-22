@@ -279,8 +279,8 @@
         "tags": [
           "Note"
         ],
-        "summary": "Get Notes",
-        "description": "Get Notes",
+        "summary": "Get All Notes",
+        "description": "Get All Notes",
         "parameters": [
           {
             "name": "name",
