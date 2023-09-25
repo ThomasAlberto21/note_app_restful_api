@@ -4,7 +4,8 @@
   "description": "Note App RESTful API",
   "main": "src/main.js",
   "scripts": {
-    "test": "jest -i"
+    "test": "jest -i",
+    "dev": "node src/main.js"
   },
   "jest": {
     "transform": {

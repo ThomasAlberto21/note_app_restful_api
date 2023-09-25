@@ -1,6 +1,7 @@
 import { prismaClient } from '../application/database.js';
 
 export const authMiddleware = async (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173/');
   const token = req.get('Authorization');
   if (!token) {
     res

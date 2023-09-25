@@ -62,3 +62,7 @@ K
 src/service/note-service.js,0/f/0fbd7e0b17877db4eb1046143d9eb209bd68c079
 H
 src/utils/date-format.js,1/b/1b278774794357d39cc0b625def1c073fa4ac473
+E
+database/note_app.sql,e/3/e3b64d6be28c5c71a63d22a4e0f9d57af0cfe0e9
+B
+tests/note.test.js,c/1/c1fc8f4d658c48abee28431440fdc34428de0646
